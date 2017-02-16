@@ -6,6 +6,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using FoodProject.Services;
+using Microsoft.AspNetCore.Routing;
+using System;
 
 namespace FoodProject
 {
@@ -29,6 +31,7 @@ namespace FoodProject
             services.AddMvc();
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IGreeter, Greeter>();
+            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +54,7 @@ namespace FoodProject
 
             app.UseDeveloperExceptionPage();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(ConfigureRoutes);
 
             // The below feature was removed for ASP.NET Core 
             // app.UseRuntimeInfoPage();
@@ -61,6 +64,13 @@ namespace FoodProject
                 var greeting = greeter.GetGreeting();
                 await context.Response.WriteAsync(greeting);
             });
+        }
+
+        private void ConfigureRoutes(IRouteBuilder routeBuilder)
+        {
+
+            routeBuilder.MapRoute("Default", 
+                "{controller=Home}/{action=Index}/{id?}");
         }
     }
 }

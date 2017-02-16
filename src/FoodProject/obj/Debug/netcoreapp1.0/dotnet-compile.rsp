@@ -171,5 +171,8 @@
 --resource:"C:\Users\johfi\Desktop\Personal Projects\FoodProject\src\FoodProject\obj\Debug\netcoreapp1.0\FoodProjectdotnet-compile.deps.json",FoodProject.deps.json
 C:\Users\johfi\Desktop\Personal Projects\FoodProject\src\FoodProject\Program.cs
 C:\Users\johfi\Desktop\Personal Projects\FoodProject\src\FoodProject\Startup.cs
+C:\Users\johfi\Desktop\Personal Projects\FoodProject\src\FoodProject\Controllers\AboutController.cs
 C:\Users\johfi\Desktop\Personal Projects\FoodProject\src\FoodProject\Controllers\HomeController.cs
+C:\Users\johfi\Desktop\Personal Projects\FoodProject\src\FoodProject\Models\Restaurant.cs
 C:\Users\johfi\Desktop\Personal Projects\FoodProject\src\FoodProject\Services\Greeter.cs
+C:\Users\johfi\Desktop\Personal Projects\FoodProject\src\FoodProject\Services\RestaurantData.cs
